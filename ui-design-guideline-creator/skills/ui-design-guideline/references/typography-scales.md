@@ -1,11 +1,23 @@
-# タイポグラフィスケール ベストプラクティス
+# Typography Scales Best Practices
 
-## フォントファミリー
+## Font Family
 
-### システムフォントスタック（推奨）
-レスポンスが速く、すべてのデバイスで利用可能：
+### Default Font (Recommended)
 
-#### Sans-serif（ゴシック体）
+#### Japanese Projects (Default)
+Use Noto Sans JP as the default font for Japanese projects:
+
+```css
+font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI",
+             Roboto, "Helvetica Neue", Arial, sans-serif;
+```
+
+Google Fonts import:
+```html
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+```
+
+#### English/International Projects
 ```css
 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
              "Helvetica Neue", Arial, "Noto Sans", sans-serif,
@@ -13,33 +25,33 @@ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
              "Noto Color Emoji";
 ```
 
-#### 日本語対応
+#### System Font Stack (Fallback)
 ```css
 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
              "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
              "Hiragino Sans", Meiryo, sans-serif;
 ```
 
-#### Serif（明朝体）
+#### Serif
 ```css
 font-family: Georgia, Cambria, "Times New Roman", Times, serif;
 ```
 
-#### Monospace（等幅）
+#### Monospace
 ```css
 font-family: Menlo, Monaco, Consolas, "Liberation Mono",
              "Courier New", monospace;
 ```
 
-## フォントサイズスケール
+## Font Size Scale
 
-### Modular Scale方式（1.25倍率）
-数学的に調和のとれたスケール：
+### Modular Scale (1.25 ratio)
+Mathematically harmonious scale:
 
 ```
 xs:   0.64rem  (10.24px @ 16px base)
 sm:   0.8rem   (12.8px)
-base: 1rem     (16px) ← ベースサイズ
+base: 1rem     (16px) ← Base size
 lg:   1.25rem  (20px)
 xl:   1.563rem (25px)
 2xl:  1.953rem (31.25px)
@@ -49,130 +61,130 @@ xl:   1.563rem (25px)
 6xl:  4.768rem (76px)
 ```
 
-### 見出しサイズ
+### Heading Sizes
 ```
-H1: 2.441rem (3xl) - 最も重要な見出し
-H2: 1.953rem (2xl) - セクション見出し
-H3: 1.563rem (xl)  - サブセクション見出し
-H4: 1.25rem  (lg)  - 小見出し
-H5: 1rem     (base)- 強調テキスト
-H6: 0.8rem   (sm)  - 最小見出し
-```
-
-### 本文テキスト
-```
-body-lg:   1.125rem (18px) - 読みやすさ重視
-body-base: 1rem     (16px) - 標準
-body-sm:   0.875rem (14px) - コンパクト
-caption:   0.75rem  (12px) - キャプション、ラベル
+H1: 2.441rem (3xl) - Most important heading
+H2: 1.953rem (2xl) - Section heading
+H3: 1.563rem (xl)  - Subsection heading
+H4: 1.25rem  (lg)  - Small heading
+H5: 1rem     (base)- Emphasized text
+H6: 0.8rem   (sm)  - Smallest heading
 ```
 
-## 行間（Line Height）
+### Body Text
+```
+body-lg:   1.125rem (18px) - Readability focused
+body-base: 1rem     (16px) - Standard
+body-sm:   0.875rem (14px) - Compact
+caption:   0.75rem  (12px) - Captions, labels
+```
 
-### 基本原則
-- **見出し**: 1.2〜1.4（タイトなレイアウト）
-- **本文**: 1.5〜1.75（可読性重視）
-- **キャプション**: 1.4〜1.5（バランス）
+## Line Height
 
-### 具体的な値
+### Basic Principles
+- **Headings**: 1.2-1.4 (tight layout)
+- **Body**: 1.5-1.75 (readability focused)
+- **Captions**: 1.4-1.5 (balanced)
+
+### Specific Values
 ```css
-leading-tight:  1.25  /* 見出し用 */
+leading-tight:  1.25  /* For headings */
 leading-snug:   1.375
-leading-normal: 1.5   /* 本文デフォルト */
+leading-normal: 1.5   /* Body default */
 leading-relaxed: 1.625
-leading-loose:  2     /* 余裕のあるレイアウト */
+leading-loose:  2     /* Spacious layout */
 ```
 
-## フォントウェイト
+## Font Weight
 
-### 推奨される重さ
+### Recommended Weights
 ```
 thin:       100
 extralight: 200
 light:      300
-normal:     400  ← 本文デフォルト
+normal:     400  ← Body default
 medium:     500
-semibold:   600  ← 見出し、強調
+semibold:   600  ← Headings, emphasis
 bold:       700
 extrabold:  800
 black:      900
 ```
 
-### 使用ガイドライン
-- **本文**: 400 (normal)
-- **強調**: 500-600 (medium-semibold)
-- **見出し**: 600-700 (semibold-bold)
-- **超強調**: 800-900 (extrabold-black)
+### Usage Guidelines
+- **Body**: 400 (normal)
+- **Emphasis**: 500-600 (medium-semibold)
+- **Headings**: 600-700 (semibold-bold)
+- **Strong emphasis**: 800-900 (extrabold-black)
 
-## 字間（Letter Spacing）
+## Letter Spacing
 
-### トラッキング
+### Tracking
 ```css
-tracking-tighter: -0.05em  /* 大きな見出し用 */
+tracking-tighter: -0.05em  /* For large headings */
 tracking-tight:   -0.025em
-tracking-normal:  0        /* デフォルト */
-tracking-wide:    0.025em  /* 小さいテキスト用 */
+tracking-normal:  0        /* Default */
+tracking-wide:    0.025em  /* For small text */
 tracking-wider:   0.05em
-tracking-widest:  0.1em    /* 全て大文字の場合 */
+tracking-widest:  0.1em    /* For uppercase */
 ```
 
-### 使用例
-- 大きな見出し（H1-H2）: `tracking-tight`
-- 通常テキスト: `tracking-normal`
-- 小さなテキスト、ラベル: `tracking-wide`
-- 大文字テキスト: `tracking-wider`〜`tracking-widest`
+### Usage Examples
+- Large headings (H1-H2): `tracking-tight`
+- Normal text: `tracking-normal`
+- Small text, labels: `tracking-wide`
+- Uppercase text: `tracking-wider` to `tracking-widest`
 
-## レスポンシブタイポグラフィ
+## Responsive Typography
 
-### フルードタイポグラフィ
-画面サイズに応じて滑らかにスケール：
+### Fluid Typography
+Smoothly scales with screen size:
 
 ```css
-/* H1の例 */
+/* H1 example */
 font-size: clamp(2rem, 5vw, 3.815rem);
 
-/* 本文の例 */
+/* Body example */
 font-size: clamp(1rem, 2.5vw, 1.125rem);
 ```
 
-### ブレークポイント別
+### By Breakpoint
 ```css
-/* モバイル */
+/* Mobile */
 h1 { font-size: 1.953rem; }
 
-/* タブレット (768px+) */
+/* Tablet (768px+) */
 @media (min-width: 768px) {
   h1 { font-size: 2.441rem; }
 }
 
-/* デスクトップ (1024px+) */
+/* Desktop (1024px+) */
 @media (min-width: 1024px) {
   h1 { font-size: 3.052rem; }
 }
 ```
 
-## テキストカラー
+## Text Colors
 
-### 階層的な色の濃さ
+### Hierarchical Color Intensity
 ```
-text-primary:   gray-900 (最も重要、見出し)
-text-secondary: gray-700 (本文)
-text-tertiary:  gray-500 (補足情報)
-text-disabled:  gray-400 (無効状態)
+text-primary:   gray-900 (most important, headings)
+text-secondary: gray-700 (body)
+text-tertiary:  gray-500 (supplementary info)
+text-disabled:  gray-400 (disabled state)
 ```
 
-## アクセシビリティ
+## Accessibility
 
-### 最小サイズ
-- **本文**: 16px以上推奨
-- **キャプション**: 12px以下は避ける
-- **タッチターゲット内のテキスト**: 14px以上
+### Minimum Sizes
+- **Body**: 16px or larger recommended
+- **Captions**: Avoid below 12px
+- **Text in touch targets**: 14px or larger
 
-### コントラスト
-- color-systems.mdを参照
+### Contrast
+- See color-systems.md
 
-## 参考デザインシステム
-- **Material Design**: 包括的なタイポグラフィシステム
-- **Tailwind CSS**: 実用的なスケールとユーティリティ
-- **IBM Carbon**: 企業向けタイポグラフィの良い例
-- **Apple Human Interface Guidelines**: モバイル向けタイポグラフィ
+## Reference Design Systems
+- **Material Design**: Comprehensive typography system
+- **Tailwind CSS**: Practical scales and utilities
+- **IBM Carbon**: Good example for enterprise typography
+- **Apple Human Interface Guidelines**: Mobile typography
