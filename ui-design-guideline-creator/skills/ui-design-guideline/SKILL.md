@@ -26,7 +26,21 @@ Generated skill will be placed in the following structure:
 
 ## Execution Flow
 
-### Phase 1: Information Gathering
+### Phase 1: Check Existing Skill
+
+First, check if `.claude/skills/design-guideline/` already exists:
+
+```bash
+ls -la .claude/skills/design-guideline/
+```
+
+**If exists**: Ask user using AskUserQuestion:
+- "A design guideline skill already exists. Do you want to overwrite it?"
+- Options: "Overwrite" / "Cancel"
+
+If user selects "Cancel", stop execution.
+
+### Phase 2: Information Gathering
 
 Ask the following using AskUserQuestion tool:
 
@@ -36,17 +50,17 @@ Ask the following using AskUserQuestion tool:
 4. **Accessibility level**: WCAG 2.1 AA / AAA
 5. **Reference URL** (optional) - Analyze with WebFetch if provided
 
-### Phase 2: Create Directory
+### Phase 3: Create Directory
 
 ```bash
 mkdir -p .claude/skills/design-guideline/references
 ```
 
-### Phase 3: Generate Files
+### Phase 4: Generate Files
 
 Generate the following files in order:
 
-#### 3.1 SKILL.md (main file)
+#### 4.1 SKILL.md (main file)
 
 Refer to `templates/skill-template.md` for generation.
 
@@ -59,7 +73,7 @@ description: UI design guideline for {PROJECT_NAME}. Use when developing UI comp
 ---
 ```
 
-#### 3.2 references/colors.md
+#### 4.2 references/colors.md
 
 Refer to `references/color-systems.md` for generation.
 
@@ -68,7 +82,7 @@ Refer to `references/color-systems.md` for generation.
 - Grayscale
 - Semantic colors
 
-#### 3.3 references/typography.md
+#### 4.3 references/typography.md
 
 Refer to `references/typography-scales.md` for generation.
 
@@ -76,24 +90,24 @@ Refer to `references/typography-scales.md` for generation.
 - Size scale (xs-6xl)
 - Heading styles
 
-#### 3.4 references/spacing.md
+#### 4.4 references/spacing.md
 
 Refer to `references/spacing-systems.md` for generation.
 
 - 8px base spacing
 - Grid and breakpoints
 
-#### 3.5 references/components.md
+#### 4.5 references/components.md
 
 Refer to `references/component-patterns.md` for generation.
 
 20+ component specifications (Button, Input, Card, Modal, etc.)
 
-#### 3.6 references/tokens.json
+#### 4.6 references/tokens.json
 
 Refer to `templates/design-tokens.json` for generation.
 
-### Phase 4: Completion Report
+### Phase 5: Completion Report
 
 After generation, report to the user:
 
