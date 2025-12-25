@@ -1,6 +1,6 @@
 ---
 name: ui-design-guideline
-description: 包括的なUIデザインガイドラインを対話的に作成します。最小限の質問から、カラーシステム、タイポグラフィ、スペーシング、20以上のコンポーネントを含む完全なデザインシステムを生成します。URLを渡すと、既存サイトのデザインを解析して、それを模したガイドラインを作成できます。
+description: Create comprehensive UI design guidelines interactively. Use when the user says "UIデザインガイドライン", "デザインシステム", "スタイルガイド", "design system", "style guide", "design guidelines", or wants to create color systems, typography, spacing, and component libraries.
 ---
 
 # UIデザインガイドライン作成スキル
