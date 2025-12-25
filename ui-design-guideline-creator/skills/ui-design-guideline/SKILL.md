@@ -1,117 +1,117 @@
 ---
 name: ui-design-guideline
-description: Create project-specific UI design guideline as a Claude Code Skill. Use when the user says "UIデザインガイドライン", "デザインシステム", "スタイルガイド", "design system", "style guide", or wants to create design guidelines for their project.
+description: Create project-specific UI design guideline as a Claude Code Skill. Use when the user says "UI design guideline", "design system", "style guide", or wants to create design guidelines for their project.
 ---
 
-# UIデザインガイドラインスキル生成
+# UI Design Guideline Skill Generator
 
-このスキルは、ユーザーと対話しながらプロジェクト固有のUIデザインガイドラインを **Claude Codeスキル** として `.claude/skills/design-guideline/` に生成・登録します。
+This skill creates a project-specific UI design guideline as a **Claude Code Skill** and registers it to `.claude/skills/design-guideline/`.
 
-## 出力先（重要）
+## Output Location (Important)
 
-生成されたスキルは以下の構造で配置されます：
+Generated skill will be placed in the following structure:
 
 ```
 .claude/
 └── skills/
     └── design-guideline/
-        ├── SKILL.md              # メイン（500行以下）
+        ├── SKILL.md              # Main (max 500 lines)
         └── references/
-            ├── colors.md         # カラーシステム
-            ├── typography.md     # タイポグラフィ
-            ├── spacing.md        # スペーシング
-            ├── components.md     # コンポーネント
-            └── tokens.json       # デザイントークン
+            ├── colors.md         # Color system
+            ├── typography.md     # Typography
+            ├── spacing.md        # Spacing
+            ├── components.md     # Components
+            └── tokens.json       # Design tokens
 ```
 
-## 実行フロー
+## Execution Flow
 
-### Phase 1: 情報収集
+### Phase 1: Information Gathering
 
-AskUserQuestionツールで以下を質問：
+Ask the following using AskUserQuestion tool:
 
-1. **プロジェクト名**（必須）
-2. **対象プラットフォーム**: Web / iOS / Android / React Native / Flutter
-3. **プライマリブランドカラー**（例: #3B82F6）
-4. **アクセシビリティレベル**: WCAG 2.1 AA / AAA
-5. **参考URL**（オプション）- 指定時はWebFetchで解析
+1. **Project name** (required)
+2. **Target platform**: Web / iOS / Android / React Native / Flutter
+3. **Primary brand color** (e.g., #3B82F6)
+4. **Accessibility level**: WCAG 2.1 AA / AAA
+5. **Reference URL** (optional) - Analyze with WebFetch if provided
 
-### Phase 2: ディレクトリ作成
+### Phase 2: Create Directory
 
 ```bash
 mkdir -p .claude/skills/design-guideline/references
 ```
 
-### Phase 3: ファイル生成
+### Phase 3: Generate Files
 
-以下のファイルを順番に生成：
+Generate the following files in order:
 
-#### 3.1 SKILL.md（メインファイル）
+#### 3.1 SKILL.md (main file)
 
-`templates/skill-template.md` を参照して生成。
+Refer to `templates/skill-template.md` for generation.
 
-**重要**: 500行以下に収める。詳細は references/ へのリンクで参照。
+**Important**: Keep under 500 lines. Link to references/ for details.
 
 ```yaml
 ---
 name: design-guideline
-description: {PROJECT_NAME}のUIデザインガイドライン。Use when developing UI components, styling, or making design decisions.
+description: UI design guideline for {PROJECT_NAME}. Use when developing UI components, styling, or making design decisions.
 ---
 ```
 
 #### 3.2 references/colors.md
 
-`references/color-systems.md` を参照して生成。
+Refer to `references/color-systems.md` for generation.
 
-- プライマリカラーパレット（50-900スケール）
-- セカンダリカラーパレット
-- グレースケール
-- セマンティックカラー
+- Primary color palette (50-900 scale)
+- Secondary color palette
+- Grayscale
+- Semantic colors
 
 #### 3.3 references/typography.md
 
-`references/typography-scales.md` を参照して生成。
+Refer to `references/typography-scales.md` for generation.
 
-- フォントファミリー
-- サイズスケール（xs-6xl）
-- 見出しスタイル
+- Font family
+- Size scale (xs-6xl)
+- Heading styles
 
 #### 3.4 references/spacing.md
 
-`references/spacing-systems.md` を参照して生成。
+Refer to `references/spacing-systems.md` for generation.
 
-- 8pxベーススペーシング
-- グリッド・ブレークポイント
+- 8px base spacing
+- Grid and breakpoints
 
 #### 3.5 references/components.md
 
-`references/component-patterns.md` を参照して生成。
+Refer to `references/component-patterns.md` for generation.
 
-20+ コンポーネント仕様（Button, Input, Card, Modal等）
+20+ component specifications (Button, Input, Card, Modal, etc.)
 
 #### 3.6 references/tokens.json
 
-`templates/design-tokens.json` を参照して生成。
+Refer to `templates/design-tokens.json` for generation.
 
-### Phase 4: 完了報告
+### Phase 4: Completion Report
 
-生成完了後、ユーザーに以下を報告：
+After generation, report to the user:
 
-1. 生成されたファイル一覧
-2. スキルの使用方法（Claudeが自動的に参照）
-3. カスタマイズ方法
+1. List of generated files
+2. How to use the skill (Claude will automatically reference it)
+3. How to customize
 
-## 参照ファイル
+## Reference Files
 
-生成時に必ず参照：
+Always refer to these during generation:
 
-- [references/color-systems.md](references/color-systems.md) - カラーシステムのベストプラクティス
-- [references/typography-scales.md](references/typography-scales.md) - タイポグラフィ
-- [references/spacing-systems.md](references/spacing-systems.md) - スペーシング
-- [references/component-patterns.md](references/component-patterns.md) - コンポーネント
-- [references/accessibility.md](references/accessibility.md) - アクセシビリティ
+- [references/color-systems.md](references/color-systems.md) - Color system best practices
+- [references/typography-scales.md](references/typography-scales.md) - Typography
+- [references/spacing-systems.md](references/spacing-systems.md) - Spacing
+- [references/component-patterns.md](references/component-patterns.md) - Components
+- [references/accessibility.md](references/accessibility.md) - Accessibility
 
-## テンプレートファイル
+## Template Files
 
-- [templates/skill-template.md](templates/skill-template.md) - SKILL.mdのテンプレート
-- [templates/design-tokens.json](templates/design-tokens.json) - トークンのテンプレート
+- [templates/skill-template.md](templates/skill-template.md) - SKILL.md template
+- [templates/design-tokens.json](templates/design-tokens.json) - Tokens template

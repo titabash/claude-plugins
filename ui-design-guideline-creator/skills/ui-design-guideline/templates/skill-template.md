@@ -1,67 +1,67 @@
 ---
 name: design-guideline
-description: {{PROJECT_NAME}}のUIデザインガイドライン。カラー、タイポグラフィ、スペーシング、コンポーネント仕様を定義。Use when developing UI components, styling elements, or making design decisions for this project.
+description: UI design guideline for {{PROJECT_NAME}}. Defines color, typography, spacing, and component specifications. Use when developing UI components, styling elements, or making design decisions for this project.
 ---
 
-# {{PROJECT_NAME}} デザインガイドライン
+# {{PROJECT_NAME}} Design Guideline
 
-プラットフォーム: {{PLATFORM}}
-アクセシビリティ: {{ACCESSIBILITY_LEVEL}}
+Platform: {{PLATFORM}}
+Accessibility: {{ACCESSIBILITY_LEVEL}}
 
-## クイックリファレンス
+## Quick Reference
 
-| カテゴリ | 概要 | 詳細 |
-|---------|------|------|
-| カラー | Primary: {{PRIMARY_COLOR}} | [colors.md](references/colors.md) |
-| タイポグラフィ | {{FONT_FAMILY_SHORT}} | [typography.md](references/typography.md) |
-| スペーシング | 8px ベース | [spacing.md](references/spacing.md) |
-| コンポーネント | 20+ 定義済み | [components.md](references/components.md) |
+| Category | Overview | Details |
+|----------|----------|---------|
+| Colors | Primary: {{PRIMARY_COLOR}} | [colors.md](references/colors.md) |
+| Typography | {{FONT_FAMILY_SHORT}} | [typography.md](references/typography.md) |
+| Spacing | 8px base | [spacing.md](references/spacing.md) |
+| Components | 20+ defined | [components.md](references/components.md) |
 
-## カラーシステム（概要）
+## Color System (Overview)
 
-- **Primary**: {{PRIMARY_COLOR}} - メインブランドカラー
-- **Secondary**: {{SECONDARY_COLOR}} - サブカラー
-- **Gray**: #6B7280 - テキスト・ボーダー
+- **Primary**: {{PRIMARY_COLOR}} - Main brand color
+- **Secondary**: {{SECONDARY_COLOR}} - Sub color
+- **Gray**: #6B7280 - Text and borders
 - **Semantic**: Success/Warning/Error/Info
 
-詳細は [references/colors.md](references/colors.md) を参照
+See [references/colors.md](references/colors.md) for details
 
-## タイポグラフィ（概要）
+## Typography (Overview)
 
-- **フォント**: {{FONT_FAMILY_SHORT}}
-- **スケール**: xs(12px) sm(14px) base(16px) lg(18px) xl(20px) 2xl(24px) 3xl(30px) 4xl(36px)
+- **Font**: {{FONT_FAMILY_SHORT}}
+- **Scale**: xs(12px) sm(14px) base(16px) lg(18px) xl(20px) 2xl(24px) 3xl(30px) 4xl(36px)
 
-詳細は [references/typography.md](references/typography.md) を参照
+See [references/typography.md](references/typography.md) for details
 
-## スペーシング（概要）
+## Spacing (Overview)
 
-8px ベースシステム: 0, 4, 8, 12, 16, 24, 32, 48, 64, 96px
+8px base system: 0, 4, 8, 12, 16, 24, 32, 48, 64, 96px
 
-詳細は [references/spacing.md](references/spacing.md) を参照
+See [references/spacing.md](references/spacing.md) for details
 
-## コンポーネント（概要）
+## Components (Overview)
 
-### 入力系
+### Input Components
 Button, Input, Textarea, Select, Checkbox, Radio, Switch
 
-### フィードバック系
+### Feedback Components
 Alert, Toast, Badge, Tag, Tooltip
 
-### レイアウト系
+### Layout Components
 Card, Modal, Drawer, Tabs, Navigation
 
-### データ表示系
+### Data Display Components
 Table, List, Pagination, Avatar
 
-詳細は [references/components.md](references/components.md) を参照
+See [references/components.md](references/components.md) for details
 
-## デザイントークン
+## Design Tokens
 
-[references/tokens.json](references/tokens.json) を参照
+See [references/tokens.json](references/tokens.json)
 
-## 使用上の注意
+## Usage Notes
 
-1. **コンポーネント実装時**: 必ず上記リファレンスを参照
-2. **カラー使用時**: コントラスト比を確認（WCAG {{ACCESSIBILITY_LEVEL}}準拠）
-3. **スペーシング**: 8px の倍数を使用
-4. **フォント**: 指定されたスケールを使用
+1. **When implementing components**: Always refer to the references above
+2. **When using colors**: Check contrast ratio (WCAG {{ACCESSIBILITY_LEVEL}} compliant)
+3. **Spacing**: Use multiples of 8px
+4. **Fonts**: Use the specified scale

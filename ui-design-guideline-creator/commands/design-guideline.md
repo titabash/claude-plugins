@@ -1,76 +1,76 @@
 ---
-description: UIデザインガイドラインスキルを作成し .claude/skills/ に登録する
+description: Create a UI design guideline skill and register it to .claude/skills/
 argument-hint: "[URL(optional)]"
 ---
 
-# UIデザインガイドラインスキル作成
+# Create UI Design Guideline Skill
 
-プロジェクト固有のUIデザインガイドラインを **Claude Codeスキル** として作成し、`.claude/skills/design-guideline/` に登録します。
+Create a project-specific UI design guideline as a **Claude Code Skill** and register it to `.claude/skills/design-guideline/`.
 
-## 引数
+## Arguments
 
-- URL（オプション）: $ARGUMENTS
+- URL (optional): $ARGUMENTS
 
-URLが指定された場合は、そのサイトのデザインを解析してベースにしてください。
+If a URL is provided, analyze that site's design and use it as a base.
 
-## 出力先
+## Output Location
 
 ```
 .claude/
 └── skills/
     └── design-guideline/
-        ├── SKILL.md              # メイン（概要、500行以下）
+        ├── SKILL.md              # Main (overview, max 500 lines)
         └── references/
-            ├── colors.md         # カラーシステム詳細
-            ├── typography.md     # タイポグラフィ詳細
-            ├── spacing.md        # スペーシング詳細
-            ├── components.md     # コンポーネント仕様
-            └── tokens.json       # デザイントークン
+            ├── colors.md         # Color system details
+            ├── typography.md     # Typography details
+            ├── spacing.md        # Spacing details
+            ├── components.md     # Component specifications
+            └── tokens.json       # Design tokens
 ```
 
-## 実行手順
+## Execution Steps
 
-1. ユーザーに以下の質問をする（AskUserQuestionツールを使用）：
-   - プロジェクト名
-   - 対象プラットフォーム（Web/iOS/Android/React Native/Flutter）
-   - プライマリブランドカラー
-   - アクセシビリティレベル（WCAG 2.1 AA/AAA）
-   - その他の要望
+1. Ask the user the following questions (using AskUserQuestion tool):
+   - Project name
+   - Target platform (Web/iOS/Android/React Native/Flutter)
+   - Primary brand color
+   - Accessibility level (WCAG 2.1 AA/AAA)
+   - Other requirements
 
-2. `.claude/skills/design-guideline/` ディレクトリを作成
+2. Create `.claude/skills/design-guideline/` directory
 
-3. 収集した情報を基に、以下のファイルを生成：
+3. Generate the following files based on collected information:
 
-### SKILL.md（メインファイル、500行以下）
+### SKILL.md (main file, max 500 lines)
 
 ```yaml
 ---
 name: design-guideline
-description: {プロジェクト名}のUIデザインガイドライン。カラー、タイポグラフィ、スペーシング、コンポーネント仕様を定義。Use when developing UI components, styling elements, or making design decisions for this project.
+description: UI design guideline for {PROJECT_NAME}. Defines color, typography, spacing, and component specifications. Use when developing UI components, styling elements, or making design decisions for this project.
 ---
 ```
 
-- クイックリファレンステーブル
-- 各セクションの概要（詳細は references/ へのリンク）
+- Quick reference table
+- Overview of each section (with links to references/)
 
 ### references/colors.md
-- プライマリカラーパレット（50-900スケール）
-- セカンダリカラーパレット
-- グレースケール
-- セマンティックカラー（Success/Warning/Error/Info）
-- 用途別カラートークン
+- Primary color palette (50-900 scale)
+- Secondary color palette
+- Grayscale
+- Semantic colors (Success/Warning/Error/Info)
+- Color tokens by usage
 
 ### references/typography.md
-- フォントファミリー
-- フォントサイズスケール（xs-6xl）
-- 見出しスタイル（H1-H6）
-- 行間・字間
+- Font family
+- Font size scale (xs-6xl)
+- Heading styles (H1-H6)
+- Line height and letter spacing
 
 ### references/spacing.md
-- 8pxベーススペーシングシステム
-- グリッドシステム
-- ブレークポイント
-- コンテナ幅
+- 8px base spacing system
+- Grid system
+- Breakpoints
+- Container widths
 
 ### references/components.md
 - Button, Input, Textarea, Select
@@ -79,11 +79,11 @@ description: {プロジェクト名}のUIデザインガイドライン。カラ
 - Alert, Toast, Badge, Tag
 - Avatar, Navigation, Tabs
 - Pagination, Table, List, Divider
-- 各コンポーネントのバリアント、サイズ、状態
+- Variants, sizes, and states for each component
 
 ### references/tokens.json
-- デザイントークン（JSON形式）
+- Design tokens (JSON format)
 
-## 参照
+## Reference
 
-詳細な手順は skills/ui-design-guideline/SKILL.md を参照してください。
+See skills/ui-design-guideline/SKILL.md for detailed instructions.
