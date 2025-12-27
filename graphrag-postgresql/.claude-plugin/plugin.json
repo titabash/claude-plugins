@@ -1,0 +1,17 @@
+{
+  "name": "graphrag-postgresql",
+  "version": "1.0.0",
+  "description": "PostgreSQL + pgvector + PGroonga で構築する汎用GraphRAGスキル。Entity/Relation抽出、コミュニティ階層化、Local/Global/Hybrid Searchまで対応。物語から技術文書まで幅広く使用可能。",
+  "author": {
+    "name": "titabash"
+  },
+  "keywords": [
+    "graphrag",
+    "postgresql",
+    "pgvector",
+    "pgroonga",
+    "rag",
+    "knowledge-graph",
+    "hybrid-search"
+  ]
+}

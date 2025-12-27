@@ -13,6 +13,12 @@
       "source": "./ui-design-guideline-creator",
       "description": "包括的なUIデザインガイドラインを対話的に作成するプラグイン",
       "version": "1.1.0"
+    },
+    {
+      "name": "graphrag-postgresql",
+      "source": "./graphrag-postgresql",
+      "description": "PostgreSQL + pgvector + PGroonga で構築する汎用GraphRAGスキル。スキーマ設計、インデックス、クエリパターンを生成。",
+      "version": "1.0.0"
     }
   ]
 }
