@@ -19,6 +19,12 @@
       "source": "./graphrag-postgresql",
       "description": "PostgreSQL + pgvector + PGroonga で構築する汎用GraphRAGスキル。スキーマ設計、インデックス、クエリパターンを生成。",
       "version": "1.0.0"
+    },
+    {
+      "name": "ai-business-team",
+      "source": "./ai-business-team",
+      "description": "AIチームが新規事業創出を支援。ラフなアイデアから完全な事業提案書を生成。",
+      "version": "1.0.0"
     }
   ]
 }

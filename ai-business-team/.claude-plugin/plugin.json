@@ -1,0 +1,17 @@
+{
+  "name": "ai-business-team",
+  "version": "1.0.0",
+  "description": "AIチームが新規事業創出を支援。ラフなアイデアから市場調査、競合分析、ビジネスモデル設計、収益シミュレーション、リスク評価を経て、完全な事業提案書を生成。",
+  "author": {
+    "name": "titabash"
+  },
+  "keywords": [
+    "business",
+    "startup",
+    "market-research",
+    "business-model",
+    "new-business",
+    "事業創出",
+    "ビジネスプラン"
+  ]
+}
